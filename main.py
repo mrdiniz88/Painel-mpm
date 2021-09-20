@@ -61,15 +61,8 @@ def Ip():
     r = requests.get(f'https://ipwhois.app/json/{ip}')
     data = r.json()
     clear()
-    print(f'{cz}IP: {data["ip"]}')
-    print(f'CONTINENTE: {data ["continent"]}')
-    print(f'PAIS: {data ["country"]}')
-    print(f'CAPITAL: {data ["country_capital"]}')
-    print(f'CODIGO DE AREA: {data ["country_phone"]}')
-    print(f'ESTADO: {data ["region"]}')
-    print(f'LATITUDE: {data ["latitude"]}')
-    print(f'LONGITUDEDE: {data ["longitude"]}')
-    print(f'PROVEDOR: {data ["asn"]}{cl}')
+    for item in data:
+        print(item,':', data[item])
     Enter()
 
 
@@ -80,16 +73,8 @@ def Cep():
     a = requests.get(f'https://viacep.com.br/ws/{cep}/json')
     cp = a.json()
     clear()
-    print(f'{cz}CEP: {cp["cep"]}')
-    print(f'LOGRADOURO: {cp["logradouro"]}')
-    print(f'COMPLEMENTO: {cp["complemento"]}')
-    print(f'BAIRRO: {cp["bairro"]}')
-    print(f'LOCALIDADE: {cp["localidade"]}')
-    print(f'UF: {cp["uf"]}')
-    print(f'IBGE: {cp["ibge"]}')
-    print(f'GIA: {cp["gia"]}')
-    print(f'DDD: {cp["ddd"]}')
-    print(f'SIAF: {cp["siafi"]}{cl}')
+    for item in cp:
+        print(item,':', cp[item])
     Enter()
 
 def Cnpj():
@@ -102,20 +87,8 @@ def Cnpj():
     
     clear()
 	
-    print(f'{cz}NOME: {pj["nome"]}')
-    print(f'COMPLEMENTO : {pj["complemento"]}')
-    print(f'ATUALIZACAO CADASTRAL: {pj["data_situacao"]}')
-    print(f'TIPO: {pj["tipo"]}')
-    print(f'TELEFONE: {pj["telefone"]}')
-    print(f'EMAIL: {pj["email"]}')
-    print(f'SITUACAO: {pj["situacao"]}')
-    print(f'BAIRRO: {pj["bairro"]}')
-    print(f'NUMERO: {pj["numero"]}')
-    print(f'CEP: {pj["cep"]}')
-    print(f'MUNICIPIO: {pj["municipio"]}')
-    print(f'DATA DE ABERTURA: {pj["abertura"]}')
-    print(f'CNPJ: {pj["cnpj"]}')
-    print(f'CAPITAL SOCIAL: {pj["capital_social"]}{cl}')
+    for item in pj:
+        print(item,':', pj[item])
     Enter()
 
 def placa():
@@ -127,23 +100,8 @@ def placa():
     pj = u.json()
     
     clear()
-
-    
-    print(f'\033[1;37mANO: {pj["ano"]}')
-    print(f'ANO MODELO: {pj["anoModelo"]}')
-    print(f'COR: {pj["cor"]}')
-    print(f'CHASSI: {pj["chassi"]}')
-    print(f'CODIGO DE RETORNO: {pj["codigoRetorno"]}')
-    print(f'CODIGO DE SITUACAO: {pj["codigoSituacao"]}')
-    print(f'DATA: {pj["data"]}')
-    print(f'DATA FURTO: {pj["dataAtualizacaoRouboFurto"]}')
-    print(f'MARCA: {pj["marca"]}')
-    print(f'MODELO: {pj["modelo"]}')
-    print(f'LOCALIDADE: {pj["uf"]}')
-    print(f'PLACA: {pj["placa"]}')
-    print(f'SITUACAO: {pj["situacao"]}')
-    print(f'MUNICIPIO: {pj["municipio"]}')
-    print(f'RETORNO: {pj["mensagemRetorno"]}\033[1;0m')
+    for item in pj:
+        print(item,':', pj[item])
     Enter()
 
 clear()
